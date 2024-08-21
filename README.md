@@ -18,6 +18,7 @@ This project aims to design and implement a secure, scalable multi-tier applicat
      *  Web-subnet 10.0.1.0/24
      *  App-subnet 10.0.2.0/24
      *   DB-subnet  10.0.3.0/24
+  ![subnets](https://github.com/user-attachments/assets/4f58070c-10d3-4cfc-a816-0f175633317a)
 
 3. # Deploy Virtual Machines.
    I deployed 3 Virtual Machines and Virtual Machine Scale Sets.
@@ -26,11 +27,16 @@ This project aims to design and implement a secure, scalable multi-tier applicat
      * **Database Subnet**: A SQL Server VM (DB-VM) is deployed to store customer data.
 
 4. # Implement Network Security
-   
-   I created Network Security Groups (NSGs) and configured them to control traffic between subnets:
+
+
+   * I created Network Security Groups (NSGs) and configured them to control traffic between subnets:
      * **Web-VM-NSG**: HTTP/HTTPS traffic is allowed to the Web VM and VMSS.
      * **App-VM-NSG**: Traffic is allowed only from the Web-Subnet to the DB-subnet.
      * **DB-VM-NSG**: Traffic is allowed only from the App-Subnet.
+   * I deployed Azure Bastion Host set up for secure access to all VMs within the VNet.
+    
+  
+   
    ![NSG](https://github.com/user-attachments/assets/f8df7576-cb51-46d0-9281-4523be268689)
        
   
