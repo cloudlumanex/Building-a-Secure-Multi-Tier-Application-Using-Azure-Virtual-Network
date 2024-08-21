@@ -26,9 +26,11 @@ This project aims to design and implement a secure, scalable multi-tier applicat
      * **Database Subnet**: A SQL Server VM (DB-VM) is deployed to store customer data.
 
 4. # Implement Network Security
+   
    I created Network Security Groups (NSGs) and configured them to control traffic between subnets:
      * **Web-VM-NSG**: HTTP/HTTPS traffic is allowed to the Web VM and VMSS.
      * **App-VM-NSG**: Traffic is allowed only from the Web-Subnet to the DB-subnet.
      * **DB-VM-NSG**: Traffic is allowed only from the App-Subnet.
+   ![NSG](https://github.com/user-attachments/assets/f8df7576-cb51-46d0-9281-4523be268689)
        
   
