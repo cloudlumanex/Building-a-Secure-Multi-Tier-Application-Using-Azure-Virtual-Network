@@ -8,6 +8,9 @@ This project aims to design and implement a secure, scalable multi-tier applicat
 * **Resiliency**: Use Azure Load Balancer to distribute incoming traffic and ensure high availability.
 * **Management**: Implementation of Azure Bastion Host to securely manage Virtual Machines (VMs) within the network.
 
+# Architecture Overview
+The architecture consists of a Virtual Network (ShopEasy-VNet) segmented into three subnets: Web, Application, and Database. The Web Subnet contains a single VM and a VM Scale Set to handle web traffic. The Application and Database Subnets each contain a single VM for backend processing and data storage. A Load Balancer distributes traffic to the web tier, and a Bastion Host provides secure access to the VMs. Network Security Groups (NSGs) enforce security policies across the subnets.
+
 ## Project Tasks
 1. # Create a Resource Group.
    * I created a Resource Group named Cloudlearner to manage and maintain all the resources for this project.
@@ -38,5 +41,9 @@ This project aims to design and implement a secure, scalable multi-tier applicat
   
    
    ![NSG](https://github.com/user-attachments/assets/f8df7576-cb51-46d0-9281-4523be268689)
+
+5. # Enable Load Balancer and Auto-Scale.
+     * I enabled Azure Load Balancer to distribute incoming web traffic across multiple instances of Web-VM and VMSS.
+     * I implemented Auto-calling for VMSS based on CPU utilization to handle varying loads.
        
   
