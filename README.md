@@ -9,8 +9,8 @@ This project aims to design and implement a secure, scalable multi-tier applicat
 * **Management**: Implementation of Azure Bastion Host to securely manage Virtual Machines (VMs) within the network.
 
 # Architecture Overview
-The architecture consists of a Virtual Network (ShopEasy-VNet) segmented into three subnets: Web, Application, and Database. The Web Subnet contains a single VM and a VM Scale Set to handle web traffic. The Application and Database Subnets each contain a single VM for backend processing and data storage. A Load Balancer distributes traffic to the web tier, and a Bastion Host provides secure access to the VMs. Network Security Groups (NSGs) enforce security policies across the subnets.
-![projectsky4 drawio](https://github.com/user-attachments/assets/b289b677-19f0-4b8c-a980-b7bcc1878499)
+The architecture comprises a Virtual Network (ShopEasy-VNet) segmented into three subnets: Web, Application, and Database. The Web Subnet contains a single VM and a VM Scale Set to handle web traffic. The Application and Database Subnets contain a single VM for backend processing and data storage. A Load Balancer distributes traffic to the web tier, and a Bastion Host provides secure access to the VMs. Network Security Groups (NSGs) enforce security policies across the subnets.
+
 
 ## Project Tasks
 1. # Create a Resource Group.
@@ -22,7 +22,8 @@ The architecture consists of a Virtual Network (ShopEasy-VNet) segmented into th
      *  Web-subnet 10.0.1.0/24
      *  App-subnet 10.0.2.0/24
      *   DB-subnet  10.0.3.0/24
-  ![subnets](https://github.com/user-attachments/assets/4f58070c-10d3-4cfc-a816-0f175633317a)
+     *   AzureBastionSubnet 10.0.0.192/24
+
 
 3. # Deploy Virtual Machines.
    I deployed 3 Virtual Machines and Virtual Machine Scale Sets.
@@ -41,10 +42,18 @@ The architecture consists of a Virtual Network (ShopEasy-VNet) segmented into th
     
   
    
-   ![NSG](https://github.com/user-attachments/assets/f8df7576-cb51-46d0-9281-4523be268689)
+  
 
 5. # Enable Load Balancer and Auto-Scale.
      * I enabled Azure Load Balancer to distribute incoming web traffic across multiple instances of Web-VM and VMSS.
      * I implemented Auto-calling for VMSS based on CPU utilization to handle varying loads.
+  
+6. # Enable Application Insight.
+     * I enabled Application Insights to collect performance data from your application components running within the VNets, such as response times, dependency calls, and failure rates.
+     * Application insight tracks the application's overall health, identifying bottlenecks or underperforming areas within the infrastructure.
+     * it helped me in detecting and diagnosing issues by logging exceptions, failed requests, and dependency failures, offering insights into the root cause of problems.
+     * It provides detailed insights into user interactions with the infrastructure helping to improve user experience.
+     * it will give real-time alerts for any critical issues or performance degradation, ensuring I am aware of the problem.
+   
        
   
