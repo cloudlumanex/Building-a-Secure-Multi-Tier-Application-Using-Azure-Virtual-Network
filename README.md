@@ -25,6 +25,7 @@ The architecture comprises a Virtual Network (ShopEasy-VNet) segmented into thre
      *  App-subnet 10.0.2.0/24
      *   DB-subnet  10.0.3.0/24
      *   AzureBastionSubnet 10.0.0.192/24
+  ![Screenshot 2024-09-23 094951](https://github.com/user-attachments/assets/3e364558-2d1e-4d73-971d-26ee07871bfc)
 
 
 3. # Deploy Virtual Machines.
