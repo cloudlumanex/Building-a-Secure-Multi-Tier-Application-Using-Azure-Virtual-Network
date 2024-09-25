@@ -11,6 +11,8 @@ This project aims to design and implement a secure, scalable multi-tier applicat
 # Architecture Overview
 The architecture comprises a Virtual Network (ShopEasy-VNet) segmented into three subnets: Web, Application, and Database. The Web Subnet contains a single VM and a VM Scale Set to handle web traffic. The Application and Database Subnets contain a single VM for backend processing and data storage. A Load Balancer distributes traffic to the web tier, and a Bastion Host provides secure access to the VMs. Network Security Groups (NSGs) enforce security policies across the subnets.
 
+![Architectural Diagram](https://github.com/user-attachments/assets/c204a424-7b60-4bad-9593-386a83e45e09)
+
 
 
 
